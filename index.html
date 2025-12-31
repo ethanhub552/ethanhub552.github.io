@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 - 张三</title>
+    <!-- 引入 Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 自定义样式 */
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+        .section-padding {
+            padding: 60px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. 导航栏 (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">张三的主页</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">关于我</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">作品集</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">退出登录</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. 轮播图 (Carousel) -->
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://picsum.photos/id/1015/1200/500" class="d-block w-100" alt="风景1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>热爱自然</h5>
+                    <p>记录生活中的每一个美好瞬间。</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/id/1016/1200/500" class="d-block w-100" alt="风景2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>专注代码</h5>
+                    <p>用技术改变世界，追求极致体验。</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/id/1018/1200/500" class="d-block w-100" alt="风景3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>探索未知</h5>
+                    <p>保持好奇心，不断学习新知识。</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- 3. 关于我 (Grid + Card + Accordion) -->
+    <section id="about" class="container section-padding">
+        <h2 class="text-center mb-5">关于我</h2>
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <img src="https://picsum.photos/id/64/300/300" class="rounded-circle img-fluid shadow" alt="头像">
+            </div>
+            <div class="col-md-8">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">你好，我是张三</h3>
+                        <p class="card-text lead">一名充满激情的前端开发者，喜欢设计简洁、优雅的用户界面。</p>
+                        <p>我拥有计算机科学学士学位，专注于Web开发技术。在过去的几年里，我参与了多个开源项目，并致力于提升用户体验。</p>
+                        
+                        <!-- 手风琴组件展示经历 -->
+                        <div class="accordion mt-4" id="experienceAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exp1">
+                                        2023 - 至今：高级前端工程师
+                                    </button>
+                                </h2>
+                                <div id="exp1" class="accordion-collapse collapse show" data-bs-parent="#experienceAccordion">
+                                    <div class="accordion-body">
+                                        负责公司核心产品的架构升级与性能优化，带领团队完成多个关键项目。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp2">
+                                        2021 - 2023：Web 开发人员
+                                    </button>
+                                </h2>
+                                <div id="exp2" class="accordion-collapse collapse" data-bs-parent="#experienceAccordion">
+                                    <div class="accordion-body">
+                                        参与电商平台的日常维护与新功能开发，熟练掌握 Vue.js 和 React。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 技能展示 (Progress Bars) -->
+    <section id="skills" class="bg-light section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">我的技能</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <label class="form-label d-flex justify-content-between"><span>HTML5 & CSS3</span> <span>95%</span></label>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label class="form-label d-flex justify-content-between"><span>JavaScript (ES6+)</span> <span>90%</span></label>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label class="form-label d-flex justify-content-between"><span>Bootstrap 5</span> <span>85%</span></label>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label class="form-label d-flex justify-content-between"><span>React / Vue</span> <span>80%</span></label>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 作品集 (Cards) -->
+    <section id="gallery" class="container section-padding">
+        <h2 class="text-center mb-5">作品集</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/id/10/400/300" class="card-img-top" alt="照片1">
+                    <div class="card-body">
+                        <h5 class="card-title">自然风光摄影</h5>
+                        <p class="card-text">记录大自然的鬼斧神工，探索未知的领域。</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">查看详情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/id/20/400/300" class="card-img-top" alt="照片2">
+                    <div class="card-body">
+                        <h5 class="card-title">极简办公桌面</h5>
+                        <p class="card-text">高效工作的秘密武器，我的日常工作台。</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">查看详情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/id/30/400/300" class="card-img-top" alt="照片3">
+                    <div class="card-body">
+                        <h5 class="card-title">生活点滴记录</h5>
+                        <p class="card-text">享受生活的每一刻，用镜头定格美好。</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 底部 & 模态框触发 (Footer & Modal) -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 张三的个人主页. All Rights Reserved.</p>
+            <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
+                联系我
+            </button>
+        </div>
+    </footer>
+
+    <!-- 联系我模态框 (Modal) -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">联系方式</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">📧 邮箱: zhangsan@example.com</li>
+                        <li class="list-group-item">📞 电话: 123-456-7890</li>
+                        <li class="list-group-item">💬 微信: zhangsan_wechat</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">发送消息</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
